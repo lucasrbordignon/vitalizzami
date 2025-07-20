@@ -30,7 +30,7 @@ export const Button = ({ label, onPress, variant = "primary", style }: Props) =>
           backgroundColor,
           borderColor,
           borderWidth: 1,
-          borderRadius: 9999,
+          borderRadius: 12,
           paddingVertical: 16,
         },
         style,
