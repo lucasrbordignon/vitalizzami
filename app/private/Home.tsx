@@ -1,18 +1,14 @@
-import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 import React from 'react';
-import { Pressable, Text, View } from 'react-native';
-
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Home() {
-  const { logout } = useAuth();
+  const { colors } = useTheme();
 
   return (
-    <View>
-      <Text>Home</Text>  
+    <SafeAreaView className='flex-1' style={{backgroundColor: colors.background}}>
 
-      <Pressable onPress={logout}>
-        <Text>Logout</Text>
-      </Pressable>
-    </View>
+
+    </SafeAreaView>
   )
 }

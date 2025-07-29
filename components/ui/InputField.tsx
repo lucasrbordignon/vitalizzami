@@ -3,16 +3,17 @@ import { Text, TextInput, TextInputProps, View } from "react-native";
 
 type Props = {
   label: string;
-  error?: string;
+  errorMessage?: string;
   color: {
     inputBg: string;
     borderInput: string;
     primaryText: string;
     placeholder: string;
+    errorMessage: string;
   };
 } & TextInputProps;
 
-export const InputField = ({ label, color, error, ...rest }: Props) => (
+export const InputField = ({ label, color, errorMessage, ...rest }: Props) => (
   <View className="mt-6">
     <Text className="text-2xl" style={{ color: color.primaryText }}>{label}</Text>
     <TextInput
@@ -25,6 +26,10 @@ export const InputField = ({ label, color, error, ...rest }: Props) => (
       }}
       {...rest}
     />
-    {!!error && <Text className="text-red-500 mt-1">{error}</Text>}
+    {errorMessage && (
+      <Text className="mt-1 text-sm" style={{ color: color.errorMessage }}>
+        {errorMessage}
+      </Text>
+    )}
   </View>
 );

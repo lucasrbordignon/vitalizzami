@@ -16,7 +16,7 @@ export default function Header({ to }:ButtonBackProps) {
   const insets = useSafeAreaInsets();
 
   return (
-    <View>
+    <View className="mt-4">
       <View className="w-full flex items-center">            
         <Logo/>
       </View> 

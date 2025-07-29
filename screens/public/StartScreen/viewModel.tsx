@@ -1,8 +1,8 @@
 import { router } from "expo-router";
 
 export const useStartViewModel = () => {
-  const goToLogin = () => router.push("/public/Login");
-  const goToRegister = () => router.push("/public/Register");
+  const goToLogin = () => router.replace("/public/Login");
+  const goToRegister = () => router.replace("/public/Register");
 
   return { goToLogin, goToRegister };
 };

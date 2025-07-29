@@ -14,30 +14,32 @@ const StartScreen = () => {
   return (
     <SafeAreaView
       style={{ backgroundColor: colors.background }}
-      className="flex-1 justify-center px-8"
+      className="flex-1"
     >
-      <View className="flex items-center">
-        <Correr width={370} />
+      <View className="flex-1 px-8"> 
+        <View className="flex items-center">
+          <Correr width={370} />
+        </View>
+
+        <View className="flex h-10 w-full items-start mt-0">
+          <Logo />
+        </View>
+
+        <AppText variant="heading" className="mt-6">
+          O poder de uma vida mais ativa, no seu controle
+        </AppText>
+
+        <AppText className="mt-3">
+          O seu assistente de saúde pessoal, que integra treinos, alimentação e
+          hidratação em um único lugar. Com planos de treino personalizados,
+          sugestões de refeições saudáveis e lembretes para manter sua hidratação
+          em dia.
+        </AppText>
+
+        <Button label="Login" onPress={goToLogin} style={{ marginTop: 32 }} />
+
+        <Button label="Register" onPress={goToRegister} variant="secondary" style={{ marginTop: 16 }} />
       </View>
-
-      <View className="flex h-10 w-full items-start mt-0">
-        <Logo />
-      </View>
-
-      <AppText variant="heading" className="mt-6">
-        O poder de uma vida mais ativa, no seu controle
-      </AppText>
-
-      <AppText className="mt-3">
-        O seu assistente de saúde pessoal, que integra treinos, alimentação e
-        hidratação em um único lugar. Com planos de treino personalizados,
-        sugestões de refeições saudáveis e lembretes para manter sua hidratação
-        em dia.
-      </AppText>
-
-      <Button label="Login" onPress={goToLogin} style={{ marginTop: 32 }} />
-
-      <Button label="Register" onPress={goToRegister} variant="secondary" style={{ marginTop: 16 }} />
     </SafeAreaView>
   );
 };

@@ -4,16 +4,18 @@ import { Pressable, Text, TextInput, TextInputProps, View } from "react-native";
 
 type Props = {
   label: string;
+  errorMessage?: string;
   color: {
     inputBg: string;
     borderInput: string;
     primaryText: string;
     secundaryText: string;
     placeholder: string;
+    errorMessage: string;
   };
 } & TextInputProps;
 
-export const PasswordField = ({ label, color, ...rest }: Props) => {
+export const PasswordField = ({ label, errorMessage, color, ...rest }: Props) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -37,6 +39,11 @@ export const PasswordField = ({ label, color, ...rest }: Props) => {
           <Feather color={color.secundaryText} size={24} name={show ? "eye-off" : "eye"} />
         </Pressable>
       </View>
+      {errorMessage && (
+        <Text className="mt-1 text-sm" style={{ color: color.errorMessage }}>
+          {errorMessage}
+        </Text>
+      )}
     </View>
   );
 };

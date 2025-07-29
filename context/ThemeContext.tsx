@@ -5,7 +5,7 @@ import { useColorScheme } from "react-native";
 type ThemeContextType = {
   theme: "light" | "dark";
   setTheme: (theme: "light" | "dark") => void;
-  colors: { primary: string; background: string; primaryText: string; secundaryText: string; buttonBorder: string; buttonText: string; buttonText2: string; inputBg: string; placeholder: string; borderInput: string };
+  colors: { primary: string; background: string; primaryText: string; secundaryText: string; buttonBorder: string; buttonText: string; buttonText2: string; inputBg: string; placeholder: string; borderInput: string; errorMessage: string };
   toggleTheme: () => void;
 };
 
@@ -26,7 +26,8 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
       buttonText2: "#467445",
       inputBg: "#F5F5F5",
       placeholder: "#A2A2A2",
-      borderInput: "#D6D6D6"
+      borderInput: "#D6D6D6",
+      errorMessage: "#ff0000"
     },
     dark: {
       primary: "#2A472A",
@@ -38,7 +39,8 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
       buttonText2: "#F1F1F1",
       inputBg: "#37474F",
       placeholder: "#A2A2A2",
-      borderInput: "#455A64"
+      borderInput: "#455A64",
+      errorMessage: "#ec5353"
     },
   };
 
