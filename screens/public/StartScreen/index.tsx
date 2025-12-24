@@ -14,9 +14,9 @@ const StartScreen = () => {
   return (
     <SafeAreaView
       style={{ backgroundColor: colors.background }}
-      className="flex-1"
+      className="flex-1 flex"
     >
-      <View className="flex-1 px-8"> 
+      <View className="flex-1 px-8 justify-center"> 
         <View className="flex items-center">
           <Correr width={370} />
         </View>

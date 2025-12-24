@@ -7,7 +7,7 @@ export const loginUser = async ({
   email: string;
   password: string;
 }) => {
-  const response = await axios.post("http://192.168.15.11:3333/auth/login", {
+  const response = await axios.post("http://192.168.15.3:3333/auth/login", {
     email,
     password,
   })

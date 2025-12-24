@@ -9,7 +9,7 @@ export const registerUser = async ({
   email: string;
   password: string;
 }) => {
-  const response = await axios.post("http://192.168.15.11:3333/auth/register", {
+  const response = await axios.post("http://192.168.15.3:3333/auth/register", {
     name,
     email,
     password,

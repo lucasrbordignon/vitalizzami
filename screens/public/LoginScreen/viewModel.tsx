@@ -26,6 +26,7 @@ export const useLoginViewModel = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const goToRegister = () => router.replace("/public/Register");
+  const goToForgotPassword = () => router.replace("/public/ForgotPassword");
 
   const form = {
     email: watch("email"),
@@ -66,6 +67,7 @@ export const useLoginViewModel = () => {
     handleChange,
     login: handleSubmit(onSubmit),
     isSubmitting,
-    goToRegister
+    goToRegister,
+    goToForgotPassword
   };
 };

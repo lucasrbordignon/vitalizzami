@@ -4,22 +4,23 @@ import Feather from "@expo/vector-icons/Feather";
 import { router, useRouter } from 'expo-router';
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type ButtonBackProps = {
   to: Parameters<typeof router.push>[0]; 
+  withLogo?: boolean;
 };
 
-export default function Header({ to }:ButtonBackProps) {
+export default function Header({ to, withLogo }:ButtonBackProps) {
   const { colors } = useTheme(); 
   const router = useRouter();
-  const insets = useSafeAreaInsets();
 
   return (
-    <View className="mt-4">
-      <View className="w-full flex items-center">            
-        <Logo/>
-      </View> 
+    <View className="mt-4 h-10">
+      { withLogo &&
+        <View className="w-full flex items-center">            
+          <Logo/>
+        </View> 
+      }
       <View className="absolute">
         <TouchableOpacity 
           onPress={() => { router.navigate(to) }}
